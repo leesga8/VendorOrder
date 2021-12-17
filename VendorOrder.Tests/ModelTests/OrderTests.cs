@@ -122,7 +122,7 @@ namespace VendorOrder.Tests
       List<Order> newList = new List<Order> { newOrder, newOrder1 };
 
       //Act
-      Order result = new Order("Incorrect", "test", 1, "item");
+      Order result = Order.Find(2);
 
       //Assert
       Assert.AreEqual(newOrder1, result);

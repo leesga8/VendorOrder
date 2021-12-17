@@ -9,10 +9,10 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceofOrder_Order()
     {
-      Order newOrder = new Order("test","test1",1,"test");
+      Order newOrder = new Order("test", "test1", 1, "test");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
-    } 
-    
+    }
+
     [TestMethod]
     public void GetTitle_ReturnsTitle_String()
     {
@@ -26,6 +26,24 @@ namespace VendorOrder.Tests
       string result = newOrder.Title;
       //Assert
       Assert.AreEqual(title, result);
+    }
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "bread";
+      string description = "sourdough loaf";
+      int price = 5;
+      string date = "1/1/2001";
+      Order newOrder = new Order(title, description, price, date);
+
+      //Act
+      string updatedTitle = "potato loaf";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
     }
   }
 }

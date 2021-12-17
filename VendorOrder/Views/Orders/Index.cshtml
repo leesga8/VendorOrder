@@ -8,10 +8,7 @@
 <ul>
   @foreach(Order order in Model)
   {
-  <li>@order.Title</li>
-  <li>@order.Description</li>
-  <li>@order.Price</li>
-  <li>@order.Date</li>
+  <li><a href='/orders/@order.Id'>@order.Title</li>
   }
 </ul>
 

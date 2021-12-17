@@ -27,5 +27,11 @@ namespace VendorOrder.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
+    }
   }
 }

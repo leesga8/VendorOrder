@@ -25,7 +25,7 @@ namespace VendorOrder.Tests
       //Act
       string result = newOrder.Title;
       //Assert
-      Assert.AreEqual("test", result);
+      Assert.AreEqual(title, result);
     }
   }
 }

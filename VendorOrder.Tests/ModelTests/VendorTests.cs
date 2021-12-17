@@ -18,56 +18,79 @@ namespace VendorOrder.Tests
     {
       Vendor newVendor = new Vendor("test", "Vendor");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
-    }  [TestMethod]
-  public void GetName_ReturnsName_String()
-  {
-    //Arrange
-    string name = "Test";
-    string description = "Vendor";
-    Vendor newVendor = new Vendor(name, description);
+    }
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      //Arrange
+      string name = "Test";
+      string description = "Vendor";
+      Vendor newVendor = new Vendor(name, description);
 
-    //Act
-    string result = newVendor.Name;
+      //Act
+      string result = newVendor.Name;
 
-    //Assert
-    Assert.AreEqual(name, result);
-  }
+      //Assert
+      Assert.AreEqual(name, result);
+    }
 
-  [TestMethod]
-  public void GetId_ReturnsVendorId_Int()
-  {
-    //Arrange
-    string name = "Test";
-    string description = "Vendor";
-    Vendor newVendor = new Vendor(name, description);
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      //Arrange
+      string name = "Test";
+      string description = "Vendor";
+      Vendor newVendor = new Vendor(name, description);
 
-    //Act
-    int result = newVendor.Id;
+      //Act
+      int result = newVendor.Id;
 
-    //Assert
-    Assert.AreEqual(1, result);
-  }
+      //Assert
+      Assert.AreEqual(1, result);
+    }
 
-  [TestMethod]
-  public void GetAll_ReturnsAllVendorObjects_VendorList()
-  {
-    //Arrange
-    string name = "Test";
-    string description = "Best";
-    
-    string name2 = "Mest";
-    string description2 = "Gest";
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      //Arrange
+      string name = "Test";
+      string description = "Best";
 
-    Vendor newVendor = new Vendor(name, description);
-    Vendor newVendor2 = new Vendor(name2, description2);
+      string name2 = "Mest";
+      string description2 = "Gest";
 
-    List<Vendor> newList = new List<Vendor> { newVendor, newVendor2 };
+      Vendor newVendor = new Vendor(name, description);
+      Vendor newVendor2 = new Vendor(name2, description2);
 
-    //Act
-    List<Vendor> result = Vendor.GetAll();
+      List<Vendor> newList = new List<Vendor> { newVendor, newVendor2 };
 
-    //Assert
-    CollectionAssert.AreEqual(newList, result);
-  }
+      //Act
+      List<Vendor> result = Vendor.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      //Arrange
+      string name = "Test";
+      string description = "Best";
+
+      string name2 = "Mest";
+      string description2 = "Gest";
+
+      Vendor newVendor = new Vendor(name, description);
+      Vendor newVendor2 = new Vendor(name2, description2);
+
+      List<Vendor> newList = new List<Vendor> { newVendor, newVendor2 };
+
+      //Act
+      Vendor result = Vendor.Find(2);
+
+      //Assert
+      Assert.AreEqual(newVendor2, result);
+    }
+
   }
 }

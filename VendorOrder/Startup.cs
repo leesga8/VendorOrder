@@ -25,6 +25,8 @@ namespace VendorOrder
 
     public void Configure(IApplicationBuilder app)
     {
+      app.UseStaticFiles(); //THIS IS NEW
+      
       app.UseDeveloperExceptionPage();
       app.UseRouting();
 
